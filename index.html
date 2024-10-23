@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Login - PWA Gym</title>
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+ <meta name="theme-color" content="#fffbfe">
+ <link rel="icon" sizes="48x48" href="favicon.ico">
+ <link rel="manifest" href="site.webmanifest">
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_completa.css">
+
+</head>
+
+<body>
+
+ <md-top-app-bar headline="headline">
+ 
+
+ </md-top-app-bar>
+
+ <h1 id="headline">Inicio de sesión</h1>
+
+ <main>
+
+  <!-- Usa
+    class="float"
+   cuando quieras que la etiqueta esté arriba todo el tiempo. -->
+ 
+
+   <p>
+    <label class="md-filled-text-field">
+     <input type="email" placeholder="Email">
+     <span accesskey="M">Email</span>
+    </label>
+   </p>
+
+
+  <p>
+    <label class="md-filled-text-field">
+    <input required placeholder="Nombre*">
+    <span>Contraseña *</span>
+    <small>Obligatorio</small>
+   </label>
+  </p>
+ 
+   <p style="text-align: center;">
+    <button class="md-filled-button">
+      Iniciar sesión
+    </button>
+    <button class="md-outline-button">
+      Registrarse
+    </button>
+  </p>
+  
+   
+ 
+
+ </main>
+
+ <nav-drw></nav-drw>
+
+</body>
+
+</html>
