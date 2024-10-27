@@ -69,8 +69,8 @@ https://www.tooplate.com/view/2119-gymso-fitness
                         <a href="#contact" class="nav-link smoothScroll">Contacto</a>
                     </li>
 
-                    <li class="nav-item">
-                      <a href="login.html" class="nav-link smoothScroll">Iniciar Sesión</a>
+                    <li class="nav-item"> 
+                      <a href="#" class="nav-link smoothScroll"   data-toggle="modal" data-target="#modalLogin">Iniciar Sesión</a>
                   </li>
                 </ul>
 
@@ -442,7 +442,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
         <div class="modal-content">
           <div class="modal-header">
 
-            <h2 class="modal-title" id="membershipFormLabel">Formulario de membresía</h2>
+            <h2 class="modal-title" id="membershipFormLabel">Registrarse</h2>
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -451,13 +451,13 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
           <div class="modal-body">
             <form class="membership-form webform" role="form">
-                <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
+                <input type="text" class="form-control" name="cf-name" placeholder="Nombre">
 
-                <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+                <input type="email" class="form-control" name="cf-email" placeholder="Correo">
 
-                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" class="form-control" name="cf-phone" placeholder="Teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
-                <textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
+                <textarea class="form-control" rows="3" name="cf-message" placeholder="Mensaje Adicional"></textarea>
 
                 <button type="submit" class="form-control" id="submit-button" name="submit">Enviar</button>
 
@@ -474,6 +474,84 @@ https://www.tooplate.com/view/2119-gymso-fitness
         </div>
       </div>
     </div>
+
+
+    <!-- Modal login -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="membershipFormLabel">Iniciar sesión / Registrarse</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Buttons for Login and Register -->
+        <div class="btn-group mb-3" role="group" aria-label="Basic example">
+          <button type="button" class="btn  bordered mt-3" id="login-button">Iniciar Sesión</button>
+          <button type="button" class="btn  bordered mt-3" id="register-button">Registrarse</button>
+        </div>
+
+        <div id="login-form" class="form-content">
+          <!-- Login Form -->
+          <form class="membership-form webform" role="form" id="loginForm">
+            <input type="email" class="form-control mb-2" name="login-email" placeholder="Email" required>
+            <input type="password" class="form-control mb-2" name="login-password" placeholder="Contraseña" required>
+            <button type="submit" class="form-control" id="submit-login" name="submit">Iniciar Sesión</button>
+          </form>
+          
+          <script>
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+              event.preventDefault(); // Evitar el envío por defecto del formulario
+              // Aquí puedes agregar tu lógica de validación o autenticación
+          
+              // Redirigir a inicioAdmin.html
+              window.location.href = 'inicioAdmin.html';
+            });
+          </script>
+          
+        </div>
+
+        <div id="register-form" class="form-content d-none">
+          <!-- Register Form -->
+          <form class="membership-form webform" role="form">
+            <input type="text" class="form-control mb-2" name="cf-name" placeholder="Nombre" required>
+            <input type="email" class="form-control mb-2" name="cf-email" placeholder="Correo" required>
+            <input type="tel" class="form-control mb-2" name="cf-phone" placeholder="Teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <textarea class="form-control mb-2" rows="3" name="cf-message" placeholder="Mensaje adicional"></textarea>
+            <div class="custom-control custom-checkbox mb-2">
+              <input type="checkbox" class="custom-control-input" id="signup-agree" required>
+              <label class="custom-control-label text-small text-muted" for="signup-agree">Acepto <a href="#">términos & condiciones</a>.</label>
+            </div>
+            <button type="submit" class="form-control" id="submit-register" name="submit">Registrarse</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript to handle form switching
+  document.getElementById('login-button').addEventListener('click', function() {
+    document.getElementById('login-form').classList.remove('d-none');
+    document.getElementById('register-form').classList.add('d-none');
+    this.classList.add('active');
+    document.getElementById('register-button').classList.remove('active');
+  });
+
+  document.getElementById('register-button').addEventListener('click', function() {
+    document.getElementById('register-form').classList.remove('d-none');
+    document.getElementById('login-form').classList.add('d-none');
+    this.classList.add('active');
+    document.getElementById('login-button').classList.remove('active');
+  });
+</script>
+
 
      <!-- SCRIPTS -->
      <script src="js/jquery.min.js"></script>
