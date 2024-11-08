@@ -13,8 +13,9 @@
  <link rel="icon" sizes="48x48" href="favicon.ico">
  <link rel="manifest" href="site.webmanifest">
  <script src="ungap/custom-elements.js"></script>
-
  <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <link rel="stylesheet" href="css/Crud.css">
  <link rel="stylesheet" href="css/estilos.css">
  <link rel="stylesheet" href="css/transicion_pestanas.css">
  <link rel="expect" blocking="render" href="#navbar">
@@ -46,13 +47,105 @@
    
  </md-top-app-bar>
 
- <h1 id="headline">Registrar productos</h1>
-
- <main>
-  <p>
-   Texto de ejemplo
-  </p>
-  
+ <!-- <h1 id="headline">Registrar productos</h1> -->
+ <main class="table">
+  <section class="table_header">
+    <h1>Lista de productos</h1>
+  </section>
+  <section class="table_body">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Imagen</th>
+          <th>Nombre del producto</th>
+          <th>Categoría</th>
+          <th>descripción</th>
+          <th>Stock</th>
+          <th>Precio</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><img src="images/products/Protein Mutant Whey.png" alt="Suplemento"></td>
+          <td>Proteína Mutant Whey</td>
+          <td>Suplemento</td>
+          <td>Proteína en polvo ideal sabor chocolate para ganar masa muscular...</td>
+          <td>25</td>
+          <td><strong>$739.00 MXN</strong></td>
+          <td><p class="status activo"><strong>Disponible</strong></p></td>
+          <td>
+            <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><img src="images/products/Creatina monohidratada.png" alt="Suplemento"></td>
+          <td>Creatine Beyond</td>
+          <td>Suplemento</td>
+          <td>Creatina Monohidratada, optimiza fuerza y recuperación en...</td>
+          <td>15</td>
+          <td><strong>$320.00 MXN</strong></td>
+          <td><p class="status activo"><strong>Disponible</strong></p></td>
+          <td>
+            <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><img src="images/products/Pre-entreno nitro.png" alt="Suplemento"></td>
+          <td>Pre-entreno Nitro</td>
+          <td>Suplemento</td>
+          <td>Fórmula de pre-entreno con cafeína y beta-alanina para mejorar...</td>
+          <td>10</td>
+          <td><strong>$350.00 MXN</strong></td>
+          <td><p class="status activo"><strong>Disponible</strong></p></td>
+          <td>
+            <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><img src="images/products/Playera gym XS.jpg" alt="Ropa"></td>
+          <td>Playera Gym XS</td>
+          <td>Ropa</td>
+          <td>Playera de tela ligera en talla XS, diseñada para entrenamientos...</td>
+          <td>4</td>
+          <td><strong>$120.00 MXN</strong></td>
+          <td><p class="status adv"><strong>Casi agotado</strong></p></td>
+          <td>
+            <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><img src="images/products/Guantes de entrenamiento.png" alt="Accesorio"></td>
+          <td>Guantes de entrenamiento</td>
+          <td>Accesorio</td>
+          <td>Guantes con acolchado para protección y agarre, ideales para...</td>
+          <td>0</td>
+          <td><strong>$89.99 MXN</strong></td>
+          <td><p class="status inactivo"><strong>Agotado</strong></p></td>
+          <td>
+            <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
  </main>
 
  <nav-bar></nav-bar>
