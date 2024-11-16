@@ -23,8 +23,8 @@
  text-transform: var(--md-sys-typescale-label-medium-text-transform);
  text-decoration: var(--md-sys-typescale-label-medium-text-decoration);
  text-decoration: none;
- padding-top: 0.75rem;
- padding-bottom: 1rem;
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
  padding-left: 0.25rem;
  padding-right: 0.25rem;
  text-align: center;

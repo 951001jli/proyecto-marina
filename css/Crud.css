@@ -7,66 +7,98 @@
 
 body{
     min-height: 100vh;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
 
-main.table{
-    width: 82vw;
-    height: 80vh;
+main{
+    width: 97vw;
+    height: 100%;
     background-color: #fff5;
     border-radius: 10px;
 }
 
+/***Tabla encabezado***/
 .table_header{
-    width: 100%;
-    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #fff4;
     padding: .8rem 1rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
+.table_header .inp-group{
+    width: 35%;
+    max-width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.table_header .inp-group input, .btn_add_new{
+    width: 50%;
+    padding: 5px 20px;
+}
+
+.btn_add_new{
+    font-size: 9px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: #f13f11;
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn_add_new:hover{
+    background-color: #fff5;
+    color: #f13f11;
+    transition: .5s;
+}
+
+input{
+    font-size: 9px;
+    outline: none;
+    border: 1px solid #f13f11;
+    border-radius: 6px;
+    color: #f13f11;
+}
+
+::placeholder{
+    color: #f13f11;
+}
+
+/***Tabla cuerpo***/
 .table_body{
-    width: 95%;
-    max-height: calc(89% - .8rem);
-    background-color: #fffb;
+    width: 100%;
     margin: .8rem auto;
+    padding: 20px;
     border-radius: 5px;
-    overflow: auto;
-}
-
-.table_body::-webkit-scrollbar{
-    width: 0.5rem;
-    height: 0.5rem;
-}
-
-.table_body::-webkit-scrollbar-thumb{
-    border-radius: .5rem;
-    background-color: #0004;
-    visibility: hidden;
-}
-
-.table_body:hover::-webkit-scrollbar-thumb{
-    visibility: visible;
+    border-collapse: collapse;
 }
 
 table{
     width: 100%;
+    background-color: #fffb;
 }
 
-table, th, td{
+table, th{
+    padding: 1rem;
+}
+
+table, td{
     padding: 1rem;
     border-collapse: collapse;
-    text-align: left;
+    text-align: center;
+    border: 1px solid #dee2e685;
 }
 
 thead th{
     position: sticky;
-    top: 0;
-    left: 0;
-    background-color: #d5d1ef;
+    background-color: #f13f11;
+    color: #fff;
 }
 
 td img{
@@ -77,11 +109,11 @@ td img{
 }
 
 tbody tr:nth-child(even){
-    background-color: #0000000b;
+    background-color: rgba(172, 172, 172, 0.4);
 }
 
 tbody tr:hover{
-    background-color: #fff6;
+    background-color: #1c1c1c38;
 }
 
 .status{
@@ -112,22 +144,93 @@ tbody tr:hover{
     border-radius: 3px;
     cursor: pointer;
     padding: 2px;
+    color: #fff;
 }
 
 .btn-view{
     background-color: #0298cf;
+    color: #fff;
 }
 
 .btn-edit{
     background-color: #4bc130;
+    color: #fff;
 }
 
 .btn-delete{
     background-color: #cf0202;
+    color: #fff;
 }
 
-@media(max-width: 1000px){
-    td:not(:first-of-type){
-        min-width: 12.1rem;
+/* thead th span.icon-arrow{
+    display: inline-block;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 1.4px solid #fff;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    margin-left: .5rem;
+} */
+
+/***Paginado***/
+.paginacion{
+    display: flex;
+    justify-content: center;
+}
+
+.paginacion a {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+  .paginacion a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .paginacion a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .paginacion a.activo{
+    background-color: #f13f11;
+    color: #fff;
+  }
+
+  .paginacion a.activo:hover{
+    background-color: #1414144e;
+    color: #f13f11;
+  }
+
+  .paginacion a:hover:not(.activo){
+    background-color: #1414144e;
+    color: #f13f11;
+  }
+
+@media (max-width: 768px){
+    thead{
+        display: none;
+    }
+    table, tbody, tr, td{
+        display: block;
+        width: 100%;
+    }
+
+    tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-collapse: collapse;
+    }
+
+    td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        text-align: left;
     }
 }

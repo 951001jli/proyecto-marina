@@ -4,7 +4,7 @@
 <head>
 
  <meta charset="UTF-8">
- <title>Usuarios - PWA Gym</title>
+ <title>GYM 11:11 - Admin data-label=""</title>
 
  <script src="js/registraServiceWorker.js"></script>
 
@@ -27,21 +27,20 @@
 
  <md-top-app-bar headline="headline">
 
-  <h1>navegación</h1>
+  <h1>Lista de usuarios</h1>
 
-  <button type="button" class="md-standard-icon-button" title="Agregar"
+  <!-- <button type="button" class="md-standard-icon-button" title="Agregar"
     slot="action">
    <span class="material-symbols-outlined">add</span>
   </button>
   <button type="button" class="md-standard-icon-button" title="Editar"
     slot="action">
    <span class="material-symbols-outlined">edit</span>
-  </button>
-
+  </button> -->
   <button type="button" class="md-standard-icon-button" title="salir"
-  slot="action" onclick="window.location.href='index.html'">
-  <span class="material-symbols-outlined">power_settings_new</span>
-</button>
+    slot="action" onclick="window.location.href='index.html'">
+    <span class="material-symbols-outlined">exit_to_app</span>
+  </button>
 
 
  </md-top-app-bar>
@@ -56,7 +55,9 @@
       <thead>
         <tr>
           <th>Id</th>
-          <th>Nombre completo</th>
+          <th>Nombre(s)</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
           <th>Correo Electrónico</th>
           <th>Estado</th>
           <th>Acciones</th>
@@ -64,51 +65,61 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Norma Aguilar Norma Lizet</td>
-          <td>normlizet213@gmail.com</td>
-          <td><strong><p class="status activo">Activo/a</p></strong></td>
-          <td>
+          <td data-label="Id">1</td>
+          <td data-label="Nombre(s)">Norma Lizet</td>
+          <td data-label="Apellido Paterno">Garduño</td>
+          <td data-label="Apellido Materno">Aguilar</td>
+          <td data-label="Correo Electrónico">normliz13@gmail.com</td>
+          <td data-label="Estado"><strong><p class="status activo">Activo/a</p></strong></td>
+          <td data-label="Acciones">
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Hernández Izquierdo José Luis</td>
-          <td>jili3214@gmail.com</td>
-          <td><strong><p class="status activo">Activo/a</p></strong></td>
-          <td>
+          <td data-label="Id">2</td>
+          <td data-label="Nombre(s)">José Luis</td>
+          <td data-label="Apellido Paterno">Hernández</td>
+          <td data-label="Apellido Materno">Izquierdo</td>
+          <td data-label="Correo Electrónico">jili3214@gmail.com</td>
+          <td data-label="Estado"><strong><p class="status activo">Activo/a</p></strong></td>
+          <td data-label="Acciones">
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>Hernández Pérez Brandon Jesús</td>
-          <td>branhp43@gmail.com</td>
-          <td><strong><p class="status inactivo">Inactivo/a</p></strong></td>
-          <td>
+          <td data-label="Id">3</td>
+          <td data-label="Nombre(s)">Brandon Jesús</td>
+          <td data-label="Apellido Paterno">Hernández</td>
+          <td data-label="Apellido Materno">Pérez</td>
+          <td data-label="Correo Electrónico">bran43@gmail.com</td>
+          <td data-label="Estado"><strong><p class="status inactivo">Inactivo/a</p></strong></td>
+          <td data-label="Acciones">
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>4</td>
-          <td>Martínez Basilio Yanitzin</td>
-          <td>yanimb5212@gmail.com</td>
-          <td><strong><p class="status activo">Activo/a</p></strong></td>
-          <td>
+          <td data-label="Id">4</td>
+          <td data-label="Nombre(s)">Yanitzin</td>
+          <td data-label="Apellido Paterno">Martínez</td>
+          <td data-label="Apellido Materno">Basilio</td>
+          <td data-label="Correo Electrónico">yanimb5212@gmail.com</td>
+          <td data-label="Estado"><strong><p class="status activo">Activo/a</p></strong></td>
+          <td data-label="Acciones">
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>5</td>
-          <td>Ortiz Trejo Edgar Alejandro</td>
-          <td>edgarot1910@gmail.com</td>
-          <td><strong><p class="status activo">Activo/a</p></strong></td>
-          <td>
+          <td data-label="Id">5</td>
+          <td data-label="Nombre(s)">Edgar Alejandro</td>
+          <td data-label="Apellido Paterno">Ortiz</td>
+          <td data-label="Apellido Materno">Trejo</td>
+          <td data-label="Correo Electrónico">edgarot19@gmail.com</td>
+          <td data-label="Estado"><strong><p class="status activo">Activo/a</p></strong></td>
+          <td data-label="Acciones">
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
@@ -117,7 +128,11 @@
     </table>
   </section>
  </main>
-
+ <div class="paginacion">
+  <a href="#">&laquo;</a>
+  <a href="#" class="activo">1</a>
+  <a href="#">&raquo;</a>
+</div>
  <nav-bar></nav-bar>
 
 </body>

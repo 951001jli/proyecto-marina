@@ -4,7 +4,7 @@
 <head>
 
  <meta charset="UTF-8">
- <title>Asistencia - PWA Gym</title>
+ <title>GYM 11:11 - Admin</title>
 
  <script src="js/registraServiceWorker.js"></script>
 
@@ -26,10 +26,19 @@
   style="padding-bottom: 5rem;">
 
  <md-top-app-bar headline="headline">
-    <button type="button" class="md-standard-icon-button" title="salir"
-    slot="action" onclick="window.location.href='index.html'">
-    <span class="material-symbols-outlined">power_settings_new</span>
+  <h1>Lista de asistencias</h1>
+    <!-- <button type="button" class="md-standard-icon-button" title="Agregar"
+    slot="action">
+   <span class="material-symbols-outlined">add</span>
   </button>
+  <button type="button" class="md-standard-icon-button" title="Editar"
+    slot="action">
+   <span class="material-symbols-outlined">edit</span>
+  </button> -->
+  <button type="button" class="md-standard-icon-button" title="salir"
+  slot="action" onclick="window.location.href='index.html'">
+  <span class="material-symbols-outlined">exit_to_app</span>
+</button>
   
    
  </md-top-app-bar>
@@ -37,14 +46,19 @@
  <!-- <h1 id="headline">Asistencias del día</h1> -->
  <main class="table">
   <section class="table_header">
-    <h1>Asistencias del día</h1>
+    <h1>Lista de asistencias</h1>
+    <div class="inp-group">
+      <input type="search" placeholder="Buscar...">
+    </div>
   </section>
   <section class="table_body">
     <table>
       <thead>
         <tr>
           <th>Id</th>
-          <th>Nombre completo</th>
+          <th>Nombre(s)</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
           <th>Fecha de asistencia</th>
           <th>Hora de entrada</th>
           <th>Hora de salida</th>
@@ -53,56 +67,66 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Norma Aguilar Norma Lizet</td>
-          <td>07 de Noviembre de 2024</td>
-          <td>7:00 a.m.</td>
-          <td>9:00 a.m.</td>
-          <td>
+          <td data-label="Id" >1</td>
+          <td data-label="Nombre(s)" >Norma Lizet</td>
+          <td data-label="Apellido Paterno" >Garduño</td>
+          <td data-label="Apellido Materno" >Aguilar</td>
+          <td data-label="Fecha de asistencia" >07 de Noviembre de 2024</td>
+          <td data-label="Hora de entrada" >7:00 a.m.</td>
+          <td data-label="Hora de salida" >9:00 a.m.</td>
+          <td data-label="Acciones" >
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Hernández Izquierdo José Luis</td>
-          <td>04 de Noviembre de 2024</td>
-          <td>7:00 a.m.</td>
-          <td>9:12 a.m.</td>
-          <td>
+          <td data-label="Id" >2</td>
+          <td data-label="Nombre(s)" >José Luis</td>
+          <td data-label="Apellido Paterno" >Hernández</td>
+          <td data-label="Apellido Materno" >Izquierdo</td>
+          <td data-label="Fecha de asistencia" >04 de Noviembre de 2024</td>
+          <td data-label="Hora de entrada" >7:00 a.m.</td>
+          <td data-label="Hora de salida" >9:12 a.m.</td>
+          <td data-label="Acciones" >
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>Hernández Pérez Brandon Jesús</td>
-          <td>30 de Octubre de 2024</td>
-          <td>9:00 a.m.</td>
-          <td>10:30 a.m.</td>
-          <td>
+          <td data-label="Id" >3</td>
+          <td data-label="Nombre(s)" >Brandon Jesús</td>
+          <td data-label="Apellido Paterno" >Hernández</td>
+          <td data-label="Apellido Materno" >Pérez</td>
+          <td data-label="Fecha de asistencia" >30 de Octubre de 2024</td>
+          <td data-label="Hora de entrada" >9:00 a.m.</td>
+          <td data-label="Hora de salida" >10:30 a.m.</td>
+          <td data-label="Acciones" >
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>4</td>
-          <td>Martínez Basilio Yanitzin</td>
-          <td>30 de Octubre de 2024</td>
-          <td>7:00 a.m.</td>
-          <td>9:12 a.m.</td>
-          <td>
+          <td data-label="Id" >4</td>
+          <td data-label="Nombre(s)" >Yanitzin</td>
+          <td data-label="Apellido Paterno" >Martínez</td>
+          <td data-label="Apellido Materno" >Basilio</td>
+          <td data-label="Fecha de asistencia" >30 de Octubre de 2024</td>
+          <td data-label="Hora de entrada" >7:00 a.m.</td>
+          <td data-label="Hora de salida" >9:12 a.m.</td>
+          <td data-label="Acciones" >
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
         <tr>
-          <td>5</td>
-          <td>Ortiz Trejo Edgar Alejandro</td>
-          <td>31 de Octubre de 2024</td>
-          <td>6:30 a.m.</td>
-          <td>8:30 a.m.</td>
-          <td>
+          <td data-label="Id" >5</td>
+          <td data-label="Nombre(s)" >Edgar Alejandro</td>
+          <td data-label="Apellido Paterno" >Ortiz</td>
+          <td data-label="Apellido Materno" >Trejo</td>
+          <td data-label="Fecha de asistencia" >31 de Octubre de 2024</td>
+          <td data-label="Hora de entrada" >6:30 a.m.</td>
+          <td data-label="Hora de salida" >8:30 a.m.</td>
+          <td data-label="Acciones" >
             <button class="btn btn-view"><i class="fa-solid fa-eye"></i></button>
             <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
           </td>
@@ -111,7 +135,11 @@
     </table>
   </section>
  </main>
-
+ <div class="paginacion">
+  <a href="#">&laquo;</a>
+  <a href="#" class="activo">1</a>
+  <a href="#">&raquo;</a>
+</div>
  <nav-bar></nav-bar>
 
 </body>
