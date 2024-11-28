@@ -496,37 +496,189 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
         <div id="login-form" class="form-content">
           <!-- Login Form -->
-          <form class="membership-form webform" role="form" id="loginForm">
-            <input type="email" class="form-control mb-2" name="login-email" placeholder="Email" required>
-            <input type="password" class="form-control mb-2" name="login-password" placeholder="Contraseña" required>
+          <form class="membership-form webform" role="form" id="formL">
+            <input type="email" id="l-email" class="form-control mb-2" name="login-email" placeholder="Email">
+            <p class='error' id="l-email-error"></p>
+            <input type="password" id="l-password" class="form-control mb-2" name="login-password" placeholder="Contraseña">
+            <p class='error' id="l-password-error"></p>
             <button type="submit" class="form-control" id="submit-login" name="submit">Iniciar Sesión</button>
           </form>
-          
           <script>
-            document.getElementById('loginForm').addEventListener('submit', function(event) {
-              event.preventDefault(); // Evitar el envío por defecto del formulario
-              // Aquí puedes agregar tu lógica de validación o autenticación
-          
-              // Redirigir a inicioAdmin.html
-              window.location.href = 'inicioAdmin.html';
+            document.getElementById('formL').addEventListener('submit', function(e){
+                e.preventDefault();
+                let hasErrors = false;
+
+                const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                const email = document.getElementById('l-email').value.trim();
+                const password = document.getElementById('l-password').value.trim();
+
+                document.getElementById('l-email-error').textContent = '';
+                document.getElementById('l-password-error').textContent = '';
+
+                //Correo electrónico
+                if(!email){
+                    document.getElementById('l-email-error').textContent = 'Es obligatorio colocar su correo.';
+                    hasErrors = true;
+                }else if(!email || !regexEmail.test(email)){
+                    document.getElementById('l-email-error').textContent = 'El correo no es válido.';
+                    hasErrors = true;
+                }
+                //Contraseña
+                if(!password){
+                    document.getElementById('l-password-error').textContent = 'Es obligatorio colocar su contraseña.';
+                    hasErrors = true;
+                }else if(password.length < 8){
+                    document.getElementById('l-password-error').textContent = 'Esta cadena debe tener más de 8 caracteres.';
+                    hasErrors = true;
+                }
+                if(!hasErrors){
+                    // alert('Se ha registrado exitosamente.');
+                    toggleForm();
+                }
             });
           </script>
-          
         </div>
 
         <div id="register-form" class="form-content d-none">
           <!-- Register Form -->
-          <form class="membership-form webform" role="form">
-            <input type="text" class="form-control mb-2" name="cf-name" placeholder="Nombre" required>
-            <input type="email" class="form-control mb-2" name="cf-email" placeholder="Correo" required>
-            <input type="tel" class="form-control mb-2" name="cf-phone" placeholder="Teléfono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-            <textarea class="form-control mb-2" rows="3" name="cf-message" placeholder="Mensaje adicional"></textarea>
+          <form id="formR" class="membership-form webform" role="form">
+            <input type="text" id="r-name(s)" class="form-control mb-2" name="cf-name" placeholder="Nombre(s)">
+            <p class="error" id="r-name(s)-error"></p>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="r-apellidoP" class="form-control" name="cf-ap" placeholder="Apellido Paterno">
+                    <p class="error" id="r-apellidoP-error"></p>
+                </div>
+                <div class="col">
+                    <input type="text" id="r-apellidoM" class="form-control" name="cf-am" placeholder="Apellido Materno">
+                    <p class="error" id="r-apellidoM-error"></p>
+                </div>
+            </div>
+            <input type="email" id="r-email" class="form-control mb-2" name="cf-email" placeholder="Correo">
+            <p class="error" id="r-email-error"></p>
+            <input type="tel" id="r-phone" class="form-control mb-2" name="cf-phone" placeholder="Teléfono">
+            <p class="error" id="r-phone-error"></p>
+            <input type="password" id="r-password" class="form-control mb-2" name="cf-password" placeholder="Contraseña">
+            <p class="error" id="r-password-error"></p>
+            <input type="password" id="r-passwordConf" class="form-control mb-2" name="cf-password" placeholder="Confirmar contraseña">
+            <p class="error" id="r-passwordConf-error"></p>
+            <!-- <textarea class="form-control mb-2" rows="3" name="cf-message" placeholder="Mensaje adicional"></textarea> -->
             <div class="custom-control custom-checkbox mb-2">
-              <input type="checkbox" class="custom-control-input" id="signup-agree" required>
+              <input type="checkbox" class="custom-control-input" id="signup-agree">
               <label class="custom-control-label text-small text-muted" for="signup-agree">Acepto <a href="#">términos & condiciones</a>.</label>
+                <p class="error" id="signup-agree-error"></p>
             </div>
             <button type="submit" class="form-control" id="submit-register" name="submit">Registrarse</button>
           </form>
+          <script>
+
+            document.getElementById('formR').addEventListener('submit', function(event){
+                event.preventDefault();
+                let hasErrors = false;
+
+                //Regex de reglas de letras, números y caracteres especiales
+                const regexName = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+                const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const regexPhone = /^\d{10}$/;
+
+                //Valores y referencias a los campos
+                const name = document.getElementById('r-name(s)').value.trim();
+                const fName = document.getElementById('r-apellidoM').value.trim();
+                const lName = document.getElementById('r-apellidoP').value.trim();
+                const email = document.getElementById('r-email').value.trim();
+                const phone = document.getElementById('r-phone').value.trim();
+                const password = document.getElementById('r-password').value.trim();
+                const passwordConf = document.getElementById('r-passwordConf').value.trim();
+                const termsCheckBox = document.getElementById('signup-agree');
+                const termsError = document.getElementById('signup-agree-error');
+
+                //Limpiar mensajes de error después de llenar los campos
+                document.getElementById('r-name(s)-error').textContent = '';
+                document.getElementById('r-apellidoP-error').textContent = '';
+                document.getElementById('r-apellidoM-error').textContent = '';
+                document.getElementById('r-email-error').textContent = '';
+                document.getElementById('r-phone-error').textContent = '';
+                document.getElementById('r-password-error').textContent = '';
+                document.getElementById('r-passwordConf-error').textContent = '';
+                termsError.textContent = '';
+
+                //Validaciones del registro
+                //Nombre(s)
+                if(!name){
+                    document.getElementById('r-name(s)-error').textContent = 'Es obligatorio colocar su nombre.';
+                    hasErrors = true;
+                }else if(name.length < 5){
+                    document.getElementById('r-name(s)-error').textContent = 'Esta cadena debe tener más de 5 caracteres.';
+                    hasErrors = true;
+                }else if(!name || !regexName.test(name)){
+                    document.getElementById('r-name(s)-error').textContent = 'En este campo no se aceptan números ni caracteres especiales.';
+                    hasErrors = true;
+                }
+                //Apellido Paterno
+                if(!fName){
+                    document.getElementById('r-apellidoP-error').textContent = 'Es obligatorio colocar su apellido paterno.';
+                    hasErrors = true;
+                }else if(fName.length < 3){
+                    document.getElementById('r-apellidoP-error').textContent = 'Esta cadena debe tener más de 3 caracteres.';
+                    hasErrors = true;
+                }else if(!fName || !regexName.test(fName)){
+                    document.getElementById('r-apellidoP-error').textContent = 'En este campo no se aceptan números ni caracteres especiales.';
+                }
+                //Apellido Materno
+                if(!lName){
+                    document.getElementById('r-apellidoM-error').textContent = 'Es obligatorio colocar su apellido materno.';
+                    hasErrors = true;
+                }else if(lName.length < 3){
+                    document.getElementById('r-apellidoM-error').textContent = 'Esta cadena debe tener más de 3 caracteres.';
+                    hasErrors = true;
+                }else if(!lName || !regexName.test(lName)){
+                    document.getElementById('r-apellidoM-error').textContent = 'En este campo no se aceptan números ni caracteres especiales.';
+                }
+                //Correo electrónico
+                if(!email){
+                    document.getElementById('r-email-error').textContent = 'Es obligatorio colocar su correo.';
+                    hasErrors = true;
+                }else if(!email || !regexEmail.test(email)){
+                    document.getElementById('r-email-error').textContent = 'El correo no es válido.';
+                    hasErrors = true;
+                }
+                //Número de teléfono
+                if(!phone){
+                    document.getElementById('r-phone-error').textContent = 'Es obligatorio colocar su número de teléfono.';
+                    hasErrors = true;
+                }else if(!regexPhone.test(phone)){
+                    document.getElementById('r-phone-error').textContent = 'En este campo sólo se aceptan números y sin espacios.';
+                    hasErrors = true;
+                }
+                //Contraseña
+                if(!password){
+                    document.getElementById('r-password-error').textContent = 'Es obligatorio colocar su contraseña.';
+                    hasErrors = true;
+                }else if(password.length < 8){
+                    document.getElementById('r-password-error').textContent = 'Esta cadena debe tener más de 8 caracteres.';
+                    hasErrors = true;
+                }
+                //Confirmar contraseña
+                if(!passwordConf){
+                    document.getElementById('r-passwordConf-error').textContent = 'Debe confirmar su contraseña.';
+                    hasErrors = true;
+                }else if(password !== passwordConf){
+                    document.getElementById('r-passwordConf-error').textContent = 'Las contraseñas no coinciden.';
+                    hasErrors = true;
+                }
+                //Casilla
+                if(!termsCheckBox.checked){
+                    termsError.textContent = 'Debe aceptar los términos y condiciones.';
+                    hasErrors = true;
+                }
+
+                if(!hasErrors){
+                    // alert('Se ha registrado exitosamente.');
+                    toggleForm();
+                }
+            });
+          </script>
         </div>
       </div>
 
@@ -559,6 +711,6 @@ https://www.tooplate.com/view/2119-gymso-fitness
      <script src="js/aos.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
-
+    <script src="js/LoginAuth.js"></script>
 </body>
 </html>

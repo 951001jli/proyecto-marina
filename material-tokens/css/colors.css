@@ -101,8 +101,10 @@
   background-color: var(--md-sys-color-on-surface-tint);
 }
 .error {
-  color: var(--md-sys-color-on-error);
-  background-color: var(--md-sys-color-error);
+  color: red;
+  font-size: 10px;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 .on-error {
   color: var(--md-sys-color-error);
