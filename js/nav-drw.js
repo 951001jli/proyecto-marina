@@ -10,7 +10,7 @@ export class NavDrw extends MdNavigationDrawer {
   return /* HTML */`
    <h1>PWA con MD</h1>
 
-   <a ${resaltaSiEstasEn(["/index.html", "", "/"])} href="index.html">
+   <a ${resaltaSiEstasEn(["/index.php", "", "/"])} href="index.php">
     <span class="material-symbols-outlined">home</span>
     Inicio
    </a>

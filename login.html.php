@@ -42,7 +42,7 @@
  <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
 
-      <a class="navbar-brand" href="index.html">Gym 11:11</a>
+      <a class="navbar-brand" href="index.php">Gym 11:11</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
-                  <a href="index.html" class="nav-link smoothScroll">Regresar</a>
+                  <a href="index.php" class="nav-link smoothScroll">Regresar</a>
               </li>
 
 
@@ -96,7 +96,7 @@
   </p>
  
   <p style="text-align: center;">
-    <button class="md-filled-button" onclick="window.location.href='inicioAdmin.html'">
+    <button class="md-filled-button" onclick="window.location.href='inicioAdmin.php'">
       Iniciar sesión
     </button>
     <button class="md-outline-button">

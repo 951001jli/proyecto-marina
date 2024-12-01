@@ -7,7 +7,7 @@ export class NavTabScrollable extends HTMLElement {
   this.classList.add("md-tab", "scrollable")
 
   this.innerHTML = /* HTML */`
-   <a ${resaltaSiEstasEn(["/index.html", "", "/"])} href="index.html">
+   <a ${resaltaSiEstasEn(["/index.php", "", "/"])} href="index.php">
     <span class="material-symbols-outlined">home</span>
     Inicio
    </a>

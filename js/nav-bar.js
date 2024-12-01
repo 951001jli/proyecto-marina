@@ -6,22 +6,22 @@ export class NavBar extends HTMLElement {
   this.classList.add("md-navigation-bar")
 
   this.innerHTML = /* HTML */`
-   <a ${resaltaSiEstasEn(["/inicioAdmin.html", "", "/"])} href="inicioAdmin.html">
+   <a ${resaltaSiEstasEn(["/inicioAdmin.php", "", "/"])} href="inicioAdmin.php">
     <span class="material-symbols-outlined">home</span>
     Inicio
    </a>
 
-   <a ${resaltaSiEstasEn(["/usuariosAdmin.html"])} href="usuariosAdmin.html">
+   <a ${resaltaSiEstasEn(["/usuariosAdmin.php"])} href="usuariosAdmin.php">
     <span class="material-symbols-outlined">person_add</span>
     Usuarios
    </a>
 
-   <a id="navbar" ${resaltaSiEstasEn(["/asistenciaAdmin.html"])} href="asistenciaAdmin.html">
+   <a id="navbar" ${resaltaSiEstasEn(["/asistenciaAdmin.php"])} href="asistenciaAdmin.php">
     <span class="material-symbols-outlined">receipt_long</span>
     Asistencia
    </a>
 
-   <a ${resaltaSiEstasEn(["/productoAdmin.html"])} href="productoAdmin.html">
+   <a ${resaltaSiEstasEn(["/productoAdmin.php"])} href="productoAdmin.php">
     <span class="material-symbols-outlined">box</span>
     Productos
    </a>`

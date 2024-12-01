@@ -39,7 +39,7 @@
    <span class="material-symbols-outlined">edit</span>
   </button> -->
   <button type="button" class="md-standard-icon-button" title="salir"
-    slot="action" onclick="window.location.href='index.html'">
+    slot="action" onclick="window.location.href='index.php'">
     <span class="material-symbols-outlined">exit_to_app</span>
   </button>
 
